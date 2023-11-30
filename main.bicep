@@ -1,9 +1,7 @@
 param acrname string 
-param acrloc string = 'korea south'
 param appServicePlanName string
-param appServicePlanLocation string = 'korea south'
+param location string = 'korea south'
 param webAppName string ='Kghazzi-webapp'
-param webAppLocation string = 'korea south'
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
 param DOCKER_REGISTRY_SERVER_USERNAME string 
@@ -14,7 +12,7 @@ module registry './ResourceModules/modules/container-registry/registry/main.bice
   name: acrname
   params: {
     name: acrname
-    location: acrloc
+    location: location
     acrAdminUserEnabled: true
   }
 }
@@ -23,7 +21,7 @@ module serverfarm './ResourceModules/modules/web/serverfarm/main.bicep' = {
   name: '${appServicePlanName}-deploy'
   params: {
     name: appServicePlanName
-    location: appServicePlanLocation
+    location: location
     sku: {
       capacity: 1
       family: 'B'
@@ -40,7 +38,7 @@ module site './ResourceModules/modules/web/site/main.bicep' = {
   params: {
     kind: 'app'
     name: webAppName
-    location: webAppLocation
+    location: location
     serverFarmResourceId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
     siteConfig: {
       linuxFxVersion: 'DOCKER|${acrname}.azurecr.io/${containerRegistryImageName }:${containerRegistryImageVersion}'
