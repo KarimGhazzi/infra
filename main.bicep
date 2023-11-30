@@ -8,7 +8,7 @@ param DOCKER_REGISTRY_SERVER_USERNAME string
 @secure()
 param DOCKER_REGISTRY_SERVER_PASSWORD string
 
-module registry './ResourceModules/modules/container-registry/registry/main.bicep' = {
+module registry 'ResourceModules/modules/container-registry/registry/main.bicep' = {
   name: acrname
   params: {
     name: acrname
@@ -17,7 +17,7 @@ module registry './ResourceModules/modules/container-registry/registry/main.bice
   }
 }
 
-module serverfarm './ResourceModules/modules/web/serverfarm/main.bicep' = {
+module serverfarm 'ResourceModules/modules/web/serverfarm/main.bicep' = {
   name: '${appServicePlanName}-deploy'
   params: {
     name: appServicePlanName
@@ -33,7 +33,7 @@ module serverfarm './ResourceModules/modules/web/serverfarm/main.bicep' = {
   }
 }
 
-module site './ResourceModules/modules/web/site/main.bicep' = {
+module site 'ResourceModules/modules/web/site/main.bicep' = {
   name: 'siteModule'
   params: {
     kind: 'app'
