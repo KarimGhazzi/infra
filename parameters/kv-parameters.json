@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "kghazzi-kv"
+        "value": "Kghazzi-kv"
       },
       "location": {
         "value": "korea south"

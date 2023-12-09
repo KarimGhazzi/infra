@@ -53,7 +53,7 @@ jobs:
           subscriptionId: ${{ env.SUBSCRIPTION_ID }}
           resourceGroupName: ${{ env.RESOURCE_GROUP }}
           template: ./kv.bicep
-          parameters: ./parameters/kv.parameters.json 
+          parameters: ./parameters/kv-parameters.json 
           deploymentName: "${{ env.USER_ALIAS }}-kv"
           failOnStdErr: false
 
