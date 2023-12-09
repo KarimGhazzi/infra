@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "acrName": {
-        "value": "Kghazzi"
+        "value": "KghazziACR"
       },
       "location": {
         "value": "korea south"
