@@ -1,6 +1,6 @@
 param acrName string 
 param appServicePlanName string
-param webAppName string ='Kghazzi-webapp'
+param webAppName string ='Kghazzi-webapp1'
 param location string
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
